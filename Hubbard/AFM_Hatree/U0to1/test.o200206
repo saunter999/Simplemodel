@@ -1,0 +1,121 @@
+
+USER      =  qhan
+HOMEDIR   =  /home/qhan
+JOB_ID    =  200206
+JOB_NAME  =  test
+QUEUE     =  wp04
+NSLOTS    =  1
+NHOSTS    =  1
+
+SUB_HOST  =  rupc08
+SUB_DIR   =  /mnt/wk06/qhan/small_projects/simplemodel/Hubbard/AFM_Hatree
+
+EXE_HOST  =  n73
+NFS_HOST  =  n73
+EXE_DIR   =  /mnt/n73
+OUT_DIR   =  /tmp
+TMP_DIR   =  /tmp/200206.1.wp04
+
+INFO      =  Files larger than 100MB will be compressed to reduce the network load.
+INFO2     =  Do NOT remove this file while job is running!
+
+PORT      =  20206
+rcp: /mnt/wk06/qhan/small_projects/simplemodel/Hubbard/AFM_Hatree/200205qhan: not a plain file
+Failure to rcp files!
+
+Your job started at Sat Nov 14 16:59:40 EST 2015 on host n73 in /mnt/n73/200206qhan
+Submission directory is /mnt/wk06/qhan/small_projects/simplemodel/Hubbard/AFM_Hatree on host rupc08
+-----------------------------------------------------------------------------------------
++ echo -catch_rsh /opt/sge6/spool/n73/active_jobs/200206.1/pe_hostfile /opt/mpich2/intel/14.0/
+-catch_rsh /opt/sge6/spool/n73/active_jobs/200206.1/pe_hostfile /opt/mpich2/intel/14.0/
++ SLEEPTIME=5
++ RETRIES=10
++ catch_rsh=0
++ catch_hostname=0
++ '[' 3 -gt 0 ']'
++ case "$1" in
++ catch_rsh=1
++ shift
++ '[' 2 -gt 0 ']'
++ case "$1" in
++ break
+++ basename /opt/sge6/mpich2_smpd/startmpich2.sh
++ me=startmpich2.sh
++ '[' 2 -lt 2 ']'
++ pe_hostfile=/opt/sge6/spool/n73/active_jobs/200206.1/pe_hostfile
++ MPICH2_ROOT=/opt/mpich2/intel/14.0/
++ export MPICH2_ROOT
++ '[' '!' -x /opt/sge6/mpich2_smpd/bin/lx26-amd64/start_mpich2 ']'
++ '[' '!' -x /opt/mpich2/intel/14.0//bin/smpd ']'
++ '[' '!' -r /opt/sge6/spool/n73/active_jobs/200206.1/pe_hostfile ']'
++ machines=/tmp/200206.1.wp04/machines
++ PeHostfile2MachineFile /opt/sge6/spool/n73/active_jobs/200206.1/pe_hostfile
++ cat /opt/sge6/spool/n73/active_jobs/200206.1/pe_hostfile
++ read line
+++ echo n73 1 wp04@n73 UNDEFINED
+++ cut -f1 '-d '
+++ cut -f1 -d.
++ host=n73
+++ echo n73 1 wp04@n73 UNDEFINED
+++ cut -f2 '-d '
++ nslots=1
++ i=1
++ '[' 1 -le 1 ']'
++ echo n73
+++ expr 1 + 1
++ i=2
++ '[' 2 -le 1 ']'
++ read line
++ cat /tmp/200206.1.wp04/machines
+n73
++ '[' 1 = 1 ']'
++ rsh_wrapper=/opt/sge6/mpich2_smpd/rsh
++ '[' '!' -x /opt/sge6/mpich2_smpd/rsh ']'
++ rshcmd=rsh
++ case "$ARC" in
++ ln -s /opt/sge6/mpich2_smpd/rsh /tmp/200206.1.wp04/rsh
++ hash -r
++ '[' 0 = 1 ']'
++ port=20206
+++ cat /tmp/200206.1.wp04/machines
+++ uniq
++ for host in '`cat $machines | uniq`'
++ /opt/sge6/mpich2_smpd/bin/lx26-amd64/start_mpich2 -n n73 /opt/mpich2/intel/14.0//bin/smpd 20206
++ actual_retry=1
++ '[' 1 -le 10 ']'
++ echo 'startmpich2.sh: check for smpd daemons (1 of 10)'
+startmpich2.sh: check for smpd daemons (1 of 10)
++ numhosts=0
+++ cat /tmp/200206.1.wp04/machines
+++ uniq
++ for host in '`cat $machines | uniq`'
+++ /opt/mpich2/intel/14.0//bin/smpd -port 20206 -status n73
+++ head -n 1
+++ cut -f 1 -d ' '
+rsh n73 /opt/mpich2/intel/14.0//bin/smpd -port 20206 -d 0
++ '[' no == smpd ']'
++ echo 'startmpich2.sh: missing smpd on n73'
+startmpich2.sh: missing smpd on n73
++ '[' 1 -eq 0 ']'
++ sleep 5
++ (( actual_retry += 1 ))
++ '[' 2 -le 10 ']'
++ echo 'startmpich2.sh: check for smpd daemons (2 of 10)'
+startmpich2.sh: check for smpd daemons (2 of 10)
++ numhosts=0
+++ cat /tmp/200206.1.wp04/machines
+++ uniq
++ for host in '`cat $machines | uniq`'
+++ /opt/mpich2/intel/14.0//bin/smpd -port 20206 -status n73
+++ cut -f 1 -d ' '
+++ head -n 1
++ '[' smpd == smpd ']'
++ (( numhosts += 1 ))
++ echo 'startmpich2.sh: found running smpd on n73'
+startmpich2.sh: found running smpd on n73
++ '[' 1 -eq 1 ']'
++ echo 'startmpich2.sh: got all 1 of 1 nodes'
+startmpich2.sh: got all 1 of 1 nodes
++ exit 0
+-catch_rsh /opt/mpich2/intel/14.0/
+Your job finished at Sat Nov 14 19:02:25 EST 2015

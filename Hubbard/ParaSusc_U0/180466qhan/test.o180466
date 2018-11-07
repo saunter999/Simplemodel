@@ -1,0 +1,124 @@
+
+USER      =  qhan
+HOMEDIR   =  /home/qhan
+JOB_ID    =  180466
+JOB_NAME  =  test
+QUEUE     =  wp04
+NSLOTS    =  1
+NHOSTS    =  1
+
+SUB_HOST  =  rupc08
+SUB_DIR   =  /mnt/wk06/qhan/small_projects/simplemodel/Hubbard/ParaSusc_U0
+
+EXE_HOST  =  n59
+NFS_HOST  =  n59
+EXE_DIR   =  /mnt/n59
+OUT_DIR   =  /tmp
+TMP_DIR   =  /tmp/180466.1.wp04
+
+INFO      =  Files larger than 100MB will be compressed to reduce the network load.
+INFO2     =  Do NOT remove this file while job is running!
+
+PORT      =  20466
+rcp: /mnt/wk06/qhan/small_projects/simplemodel/Hubbard/ParaSusc_U0/180439qhan: not a plain file
+rcp: /mnt/wk06/qhan/small_projects/simplemodel/Hubbard/ParaSusc_U0/180442qhan: not a plain file
+rcp: /mnt/wk06/qhan/small_projects/simplemodel/Hubbard/ParaSusc_U0/180446qhan: not a plain file
+rcp: /mnt/wk06/qhan/small_projects/simplemodel/Hubbard/ParaSusc_U0/badrun: not a plain file
+Failure to rcp files!
+
+Your job started at Sun Oct 18 22:50:33 EDT 2015 on host n59 in /mnt/n59/180466qhan
+Submission directory is /mnt/wk06/qhan/small_projects/simplemodel/Hubbard/ParaSusc_U0 on host rupc08
+-----------------------------------------------------------------------------------------
++ echo -catch_rsh /opt/sge6/spool/n59/active_jobs/180466.1/pe_hostfile /opt/mpich2/intel/14.0/
+-catch_rsh /opt/sge6/spool/n59/active_jobs/180466.1/pe_hostfile /opt/mpich2/intel/14.0/
++ SLEEPTIME=5
++ RETRIES=10
++ catch_rsh=0
++ catch_hostname=0
++ '[' 3 -gt 0 ']'
++ case "$1" in
++ catch_rsh=1
++ shift
++ '[' 2 -gt 0 ']'
++ case "$1" in
++ break
+++ basename /opt/sge6/mpich2_smpd/startmpich2.sh
++ me=startmpich2.sh
++ '[' 2 -lt 2 ']'
++ pe_hostfile=/opt/sge6/spool/n59/active_jobs/180466.1/pe_hostfile
++ MPICH2_ROOT=/opt/mpich2/intel/14.0/
++ export MPICH2_ROOT
++ '[' '!' -x /opt/sge6/mpich2_smpd/bin/lx26-amd64/start_mpich2 ']'
++ '[' '!' -x /opt/mpich2/intel/14.0//bin/smpd ']'
++ '[' '!' -r /opt/sge6/spool/n59/active_jobs/180466.1/pe_hostfile ']'
++ machines=/tmp/180466.1.wp04/machines
++ PeHostfile2MachineFile /opt/sge6/spool/n59/active_jobs/180466.1/pe_hostfile
++ cat /opt/sge6/spool/n59/active_jobs/180466.1/pe_hostfile
++ read line
+++ echo n59 1 wp04@n59 UNDEFINED
+++ cut -f1 '-d '
+++ cut -f1 -d.
++ host=n59
+++ echo n59 1 wp04@n59 UNDEFINED
+++ cut -f2 '-d '
++ nslots=1
++ i=1
++ '[' 1 -le 1 ']'
++ echo n59
+++ expr 1 + 1
++ i=2
++ '[' 2 -le 1 ']'
++ read line
++ cat /tmp/180466.1.wp04/machines
+n59
++ '[' 1 = 1 ']'
++ rsh_wrapper=/opt/sge6/mpich2_smpd/rsh
++ '[' '!' -x /opt/sge6/mpich2_smpd/rsh ']'
++ rshcmd=rsh
++ case "$ARC" in
++ ln -s /opt/sge6/mpich2_smpd/rsh /tmp/180466.1.wp04/rsh
++ hash -r
++ '[' 0 = 1 ']'
++ port=20466
+++ cat /tmp/180466.1.wp04/machines
+++ uniq
++ for host in '`cat $machines | uniq`'
++ /opt/sge6/mpich2_smpd/bin/lx26-amd64/start_mpich2 -n n59 /opt/mpich2/intel/14.0//bin/smpd 20466
++ actual_retry=1
++ '[' 1 -le 10 ']'
++ echo 'startmpich2.sh: check for smpd daemons (1 of 10)'
+startmpich2.sh: check for smpd daemons (1 of 10)
++ numhosts=0
+++ cat /tmp/180466.1.wp04/machines
+++ uniq
++ for host in '`cat $machines | uniq`'
+++ /opt/mpich2/intel/14.0//bin/smpd -port 20466 -status n59
+++ head -n 1
+++ cut -f 1 -d ' '
+rsh n59 /opt/mpich2/intel/14.0//bin/smpd -port 20466 -d 0
++ '[' no == smpd ']'
++ echo 'startmpich2.sh: missing smpd on n59'
+startmpich2.sh: missing smpd on n59
++ '[' 1 -eq 0 ']'
++ sleep 5
++ (( actual_retry += 1 ))
++ '[' 2 -le 10 ']'
++ echo 'startmpich2.sh: check for smpd daemons (2 of 10)'
+startmpich2.sh: check for smpd daemons (2 of 10)
++ numhosts=0
+++ uniq
+++ cat /tmp/180466.1.wp04/machines
++ for host in '`cat $machines | uniq`'
+++ cut -f 1 -d ' '
+++ head -n 1
+++ /opt/mpich2/intel/14.0//bin/smpd -port 20466 -status n59
++ '[' smpd == smpd ']'
++ (( numhosts += 1 ))
++ echo 'startmpich2.sh: found running smpd on n59'
+startmpich2.sh: found running smpd on n59
++ '[' 1 -eq 1 ']'
++ echo 'startmpich2.sh: got all 1 of 1 nodes'
+startmpich2.sh: got all 1 of 1 nodes
++ exit 0
+-catch_rsh /opt/mpich2/intel/14.0/
+Your job finished at Sun Oct 18 23:20:17 EDT 2015

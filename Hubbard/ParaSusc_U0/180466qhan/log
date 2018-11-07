@@ -1,0 +1,4 @@
+Comparing Mz(T,h very small) evaluated by numericals and exact result
+Mz_Ana= 4.59328729475e-09 Mz_num= 4.50202441993e-09 rela_err= 0.020271519278
+Comparing chiz(T,h very small) evaluated by numericals and exact result
+chiz_Ana= 0.459328729475 chiz_num= 0.450202441993 rela_err= 0.020271519278
